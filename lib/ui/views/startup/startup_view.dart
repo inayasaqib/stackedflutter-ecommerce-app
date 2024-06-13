@@ -20,11 +20,10 @@ class StartupView extends StackedView<StartupViewModel> {
           mainAxisSize: MainAxisSize.min,
           children: [
            Image(image: AssetImage('assets/images/logo.png')),
+           SizedBox(height: 10,),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('Loading ...', style: TextStyle(fontSize: 16)),
-                horizontalSpaceSmall,
                 SizedBox(
                   width: 16,
                   height: 16,
@@ -32,7 +31,12 @@ class StartupView extends StackedView<StartupViewModel> {
                     color: Colors.black,
                     strokeWidth: 6,
                   ),
-                )
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text('Loading', style: TextStyle(fontSize: 16)),
+                horizontalSpaceSmall,
               ],
             ),
           ],
