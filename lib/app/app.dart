@@ -1,3 +1,4 @@
+import 'package:ecommerce/service/product_service.dart';
 import 'package:ecommerce/ui/ScreenChange/screen2.dart';
 import 'package:ecommerce/ui/ScreenChange/screen3.dart';
 import 'package:ecommerce/ui/ScreenChange/screenchange_view.dart';
@@ -26,6 +27,7 @@ import 'package:stacked_services/stacked_services.dart';
     LazySingleton(classType: BottomSheetService),
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
+    Singleton(classType: Product)
     // @stacked-service
   ],
   bottomsheets: [
