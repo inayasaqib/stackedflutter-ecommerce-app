@@ -471,7 +471,7 @@ class _HomeViewState extends State<HomeView> {
                                       height: 10,
                                     ),
                                     Text(
-                                      product.price,
+                                      "\$${product.price}",
                                     ),
                                     Row(
                                       children: [
@@ -916,6 +916,7 @@ class _HomeViewState extends State<HomeView> {
                     setState(() {
                       viewmodel.currentIndex == 2;
                     });
+                    viewmodel.navs();
                   },
                   child: Column(
                     children: [
@@ -934,8 +935,9 @@ class _HomeViewState extends State<HomeView> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      viewmodel.currentIndex == 0;
+                      viewmodel.currentIndex == 0; 
                     });
+                    viewmodel.nav();
                   },
                   child: Column(
                     children: [
@@ -1000,6 +1002,7 @@ class _HomeViewState extends State<HomeView> {
               setState(() {
                       viewmodel.currentIndex == 4;
                     });
+                    viewmodel.cart();
             },
             shape: const CircleBorder(),
             backgroundColor: Colors.white,

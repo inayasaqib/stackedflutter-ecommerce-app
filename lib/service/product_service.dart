@@ -5,10 +5,10 @@ class Product {
   final String image;
   final String review;
   final String seller;
-  final String price;
+  final double price;
   final String category;
   final String rate;
-  String quantity;
+  int quantity;
 
 Product({
     this.title = '',
@@ -16,10 +16,10 @@ Product({
     this.image = '',
     this.review = '',
     this.seller = '',
-    this.price = '',
+    required this.price,
     this.category = '',
     this.rate = '',
-    this.quantity = '',
+    required this.quantity
   });
 }
 class Home {
@@ -31,7 +31,7 @@ class Home {
   final String price;
   final String category;
   final String rate;
-  String quantity;
+  int quantity;
 
 Home({
     this.title = '',
@@ -42,7 +42,6 @@ Home({
     this.price = '',
     this.category = '',
     this.rate = '',
-    this.quantity = '',
-  });
+   required this.quantity});
 }
 

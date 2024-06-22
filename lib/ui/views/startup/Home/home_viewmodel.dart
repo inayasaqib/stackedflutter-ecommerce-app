@@ -1,4 +1,5 @@
 import 'package:ecommerce/app/app.locator.dart';
+import 'package:ecommerce/app/app.router.dart';
 import 'package:ecommerce/service/product_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -6,6 +7,15 @@ import 'package:stacked_services/stacked_services.dart';
 class HomeViewModel extends BaseViewModel{
    Product product_service = locator<Product>();
   final navigationservice = locator<NavigationService>();
+  nav(){
+    navigationservice.navigateTo(Routes.wishlistView);
+  }
+  navs(){
+    navigationservice.navigateTo(Routes.homeView);
+  }
+  cart(){
+    navigationservice.navigateTo(Routes.cartScreen);
+  }
   int currentIndex = 2;
   final List<Product> product = [
       Product(
@@ -14,9 +24,9 @@ class HomeViewModel extends BaseViewModel{
         image: "assets/images/1.png",
         review: "(320 reviews)",
         seller: 'Urban threads',
-        price:"RS1500",
+        price: 1500,
         category: "Women",
-        quantity: '1',
+        quantity: 1,
         rate: '4.5'),
     Product(
         title: "HRX by Hrithik Roshan",
@@ -24,9 +34,9 @@ class HomeViewModel extends BaseViewModel{
         image: 'assets/images/2.png',
         review: "(32 reviews)",
         seller: "Trendy Threads Boutique",
-        price: "RS2499",
+        price: 2499,
         category: "fashion",
-        quantity: '2',
+        quantity: 2,
         rate: '3.7'),
       ];  
       final List<Home> home = [
@@ -39,7 +49,7 @@ class HomeViewModel extends BaseViewModel{
           price: 'RS6500',
           category: 'Electronics',
           rate: '4.2',
-          quantity: '1',
+          quantity: 2,
         ),
         Home(
           title: 'Labbin White Sneakers',
@@ -50,7 +60,7 @@ class HomeViewModel extends BaseViewModel{
           price: 'RS6500',
           category: 'Fashion',
           rate: '3.2',
-          quantity: '4',
+          quantity: 4,
         )
       ];
 }

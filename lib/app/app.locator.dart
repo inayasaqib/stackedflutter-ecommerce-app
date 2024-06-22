@@ -27,5 +27,5 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => BottomSheetService());
   locator.registerLazySingleton(() => DialogService());
   locator.registerLazySingleton(() => NavigationService());
-  locator.registerSingleton(Product());
+  locator.registerSingleton(Product(quantity: 1, price: 1));
 }

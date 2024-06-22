@@ -1,4 +1,6 @@
+import 'package:ecommerce/ui/views/startup/Home/home_view.dart';
 import 'package:ecommerce/ui/views/startup/Login%20and%20Signup/login_viewmodel.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -11,6 +13,29 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   @override
+  final emailController = TextEditingController();
+    final passController = TextEditingController();
+   loginUser(context) async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passController.text,
+      );
+      emailController.clear();
+      passController.clear();
+      Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeView()));
+      print("=============== LoggedIn Successfully ===================");
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
+    } catch (e) {
+      print("=============== Catch ===================");
+      print(e);
+    }
+  }
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
         viewModelBuilder: () => LoginViewModel(),
@@ -88,7 +113,7 @@ class _LoginViewState extends State<LoginView> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
-                          controller: viewmodel.emailController,
+                          controller: emailController,
                           decoration: const InputDecoration(
                             hintText: "Email",
                             icon: Icon(Icons.person),
@@ -102,14 +127,13 @@ class _LoginViewState extends State<LoginView> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
-                          controller: viewmodel.passController,
+                          controller: passController,
                           decoration: const InputDecoration(
                             hintText: "Password",
                             hintStyle: TextStyle(
                               color: Color.fromARGB(255, 133, 132, 132),
                             ),
                             icon: Icon(Icons.lock),
-                            fillColor: Colors.white,
                             filled: true,
                           ),
                         ),
@@ -137,7 +161,7 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                         viewmodel.nav() && viewmodel.loginUser(context);
+                         loginUser(context);
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor:
