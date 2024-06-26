@@ -6,23 +6,26 @@ import 'package:stacked_services/stacked_services.dart';
 
 class WishlistViewmodel extends BaseViewModel {
   final navigationservice = locator<NavigationService>();
-  Product product_service = locator<Product>();
+  Product productservice = locator<Product>();
   int currentIndex = 2;
     int currentInde = 1;
   int currentImage =0;
-  int get _current => currentImage;
+ // int get _current => currentImage;
   nav(){
     navigationservice.navigateTo(Routes.homeView);
   }
   navs(){
     navigationservice.navigateTo(Routes.wishlistView);
   }
-  set _current(int index) {
-    currentImage = index;
-    notifyListeners();
-  }
+  // set _current(int index) {
+  //   currentImage = index;
+  //   notifyListeners();
+  // }
   cart(){
     navigationservice.navigateTo(Routes.cartScreen);
+  }
+  profile(){
+    navigationservice.navigateTo(Routes.profile);
   }
   final List<Product> product = [
     Product(
@@ -34,7 +37,7 @@ class WishlistViewmodel extends BaseViewModel {
       seller: 'patagonia',
       price: 499,
       category: 'Mens, Fashion',
-      quantity: 10,
+      quantity: 1,
     ),
     Product(
       title: 'Black Dress',
@@ -45,7 +48,7 @@ class WishlistViewmodel extends BaseViewModel {
       seller: 'Nordstrom',
       price: 2000,
       category: 'Womens, Fashion',
-      quantity: 25,
+      quantity: 1,
     ),
     Product(
       title: 'Flare Dress',
@@ -56,7 +59,7 @@ class WishlistViewmodel extends BaseViewModel {
       seller: 'ASOS',
       price: 1990,
       category: 'Womens, Fashion',
-      quantity: 6,
+      quantity: 1,
     ),
     Product(
       title: 'Jordan Stay',
@@ -68,7 +71,7 @@ class WishlistViewmodel extends BaseViewModel {
       seller: 'Zappos',
       price: 4999,
       category: 'Fashion',
-      quantity: 3,
+      quantity: 1,
     ),
     Product(
       title: 'Sony PS4',
@@ -80,7 +83,7 @@ class WishlistViewmodel extends BaseViewModel {
       seller: 'Sony',
       price: 11999,
       category: 'Electronics',
-      quantity: 5,
+      quantity: 1,
     ),
     Product(
       title: 'D72 Digital Camera',
@@ -92,7 +95,7 @@ class WishlistViewmodel extends BaseViewModel {
       seller: 'Adorama',
       price: 26999,
       category: '3.4',
-      quantity: 2,
+      quantity: 1,
     ),
     Product(
       title: 'Mens Starry',
@@ -114,7 +117,7 @@ class WishlistViewmodel extends BaseViewModel {
       seller: 'Mod Cloth',
       price: 1900,
       category: 'Womens, Fashion',
-      quantity: 4,
+      quantity: 1,
     ),
     Product(
       title: 'Denim Dress',
@@ -125,7 +128,7 @@ class WishlistViewmodel extends BaseViewModel {
       seller: 'Revolve',
       price: 999,
       category: 'Mens, Fashion',
-      quantity: 50,
+      quantity:1,
     ),
     Product(
       title: 'Realme 7',
@@ -136,7 +139,7 @@ class WishlistViewmodel extends BaseViewModel {
       seller: 'Real Me',
       price: 3499,
       category: 'Electronics',
-      quantity: 5,
+      quantity: 1,
     ),
     Product(
       title: 'Black Jacket 1250',
@@ -147,7 +150,7 @@ class WishlistViewmodel extends BaseViewModel {
       seller: 'Champion',
       price: 2999,
       category: 'Mens, Fashion',
-      quantity: 32,
+      quantity: 1,
     ),
     Product(
       title: "men's & boys shoes",
@@ -158,7 +161,7 @@ class WishlistViewmodel extends BaseViewModel {
       seller: 'Clarks',
       price: 1999,
       category: 'Fashion',
-      quantity: 45,
+      quantity: 1,
     ),
   ];    
 }

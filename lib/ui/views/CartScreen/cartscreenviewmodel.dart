@@ -6,6 +6,8 @@ class CartProvider extends ChangeNotifier {
   final List<Product> _cart = [];
   List<Product> get cart => _cart;
   void toggleFavourite(Product product) {
+    // ignore: avoid_print
+    print("hello203 $product");
     if (_cart.contains(product)) {
       for (Product element in _cart) {
         element.quantity++;
@@ -21,6 +23,7 @@ class CartProvider extends ChangeNotifier {
     totalPrice(){
             double total1 = 0.0;
             for(Product element in _cart){
+                // ignore: unnecessary_cast
                 total1 += (element.price *element.quantity) as double;
             }
             return total1;

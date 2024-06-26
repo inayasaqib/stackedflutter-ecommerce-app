@@ -876,7 +876,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                   title: const Text(' My Profile '),
                   onTap: () {
-                    Navigator.pop(context);
+                    viewmodel.profile();
                   },
                 ),
                 ListTile(

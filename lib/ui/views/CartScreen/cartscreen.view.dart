@@ -95,6 +95,7 @@ class _CartScreenState extends State<CartScreen> {
                                           fontWeight: FontWeight.bold,
                                           fontSize: 16,
                                         ),
+                                        maxLines: 2,
                                       ),
                                       const SizedBox(height: 5),
                                       Text(

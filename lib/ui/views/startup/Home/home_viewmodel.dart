@@ -16,6 +16,9 @@ class HomeViewModel extends BaseViewModel{
   cart(){
     navigationservice.navigateTo(Routes.cartScreen);
   }
+  profile(){
+    navigationservice.navigateTo(Routes.profile);
+  }
   int currentIndex = 2;
   final List<Product> product = [
       Product(

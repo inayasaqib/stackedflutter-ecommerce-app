@@ -60,7 +60,7 @@ class _WishlistViewState extends State<WishlistView> {
                   leading: const Icon(Icons.person),
                   title: const Text('My Profile'),
                   onTap: () {
-                    Navigator.pop(context);
+                    viewmodel.profile();
                   },
                 ),
                 ListTile(

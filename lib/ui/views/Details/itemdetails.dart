@@ -56,7 +56,7 @@ class _ItemDetailsState extends State<ItemDetails> {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                SizedBox(width: 3,),
+                              const  SizedBox(width: 3,),
                                 const Align(
                                     alignment: Alignment.centerLeft,
                                     child: Icon(

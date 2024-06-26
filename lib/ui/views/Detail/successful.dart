@@ -2,14 +2,9 @@ import 'package:ecommerce/ui/views/startup/wish%20list/wishlist_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-class Successful extends StatefulWidget {
+class Successful extends StatelessWidget {
   const Successful({super.key});
 
-  @override
-  State<Successful> createState() => _SuccessfulState();
-}
-
-class _SuccessfulState extends State<Successful> {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(

@@ -13,6 +13,7 @@ import 'package:ecommerce/ui/views/Details/detailapp.dart';
 import 'package:ecommerce/ui/views/Details/detailscreen.dart';
 import 'package:ecommerce/ui/views/Details/image_slider.dart';
 import 'package:ecommerce/ui/views/Details/itemdetails.dart';
+import 'package:ecommerce/ui/views/Profile/profile.dart';
 import 'package:ecommerce/ui/views/startup/Home/home_view.dart';
 import 'package:ecommerce/ui/views/startup/Login%20and%20Signup/login.dart';
 import 'package:ecommerce/ui/views/startup/Login%20and%20Signup/signup.dart';
@@ -41,6 +42,7 @@ import 'package:stacked_services/stacked_services.dart';
      MaterialRoute(page: Successful, initial: false),
      MaterialRoute(page: PersonalDetails, initial: false),
      MaterialRoute(page: CheckOut, initial: false),
+     MaterialRoute(page: Profile, initial: false),
     // @stacked-route
   ],
   dependencies: [
